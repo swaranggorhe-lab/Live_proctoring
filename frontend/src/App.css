@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+.App {
+  min-height: 100vh;
+  background: #fff;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: left;
+  color: #000;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: normal;
+}
+
+.student-id {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.warning-counter {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 1rem;
+  align-items: start;
+}
+
+.video-section {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+}
+
+.video-feed {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4/3;
+}
+
+.overlay-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+.legend {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.legend div { display:flex; align-items:center; gap:8px; font-size:13px; }
+.swatch { width:12px; height:12px; display:inline-block; border-radius:0; }
+.swatch-face { background:#33cc33; }
+.swatch-looking { background:#ff8c00; }
+.swatch-out { background:#ffd700; }
+.swatch-phone { background:#ff3333; }
+
+.controls-section {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+
+.setup-panel,
+.active-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.student-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: none;
+}
+
+.student-input:focus {
+  outline: 1px solid #333;
+  border-color: #333;
+}
+
+.btn-start,
+.btn-stop,
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: normal;
+  border: 1px solid #999;
+  border-radius: 0;
+  cursor: pointer;
+  transition: none;
+  width: 100%;
+  background: #f0f0f0;
+  color: #000;
+}
+
+.btn-start {
+  background: #e0e0e0;
+  color: #000;
+}
+
+.btn-start:hover {
+  background: #d0d0d0;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-stop {
+  background: #ffcccc;
+  color: #000;
+}
+
+.btn-stop:hover {
+  background: #ffbbbb;
+  transform: none;
+}
+
+.btn:hover {
+  background: #e8e8e8;
+}
+
+.violations-section {
+  grid-column: 2;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  max-height: none;
+  overflow-y: visible;
+}
+
+.violations-section h2 {
+  color: #000;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.no-violations {
+  text-align: center;
+  color: #666;
+  padding: 1rem 0.5rem;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.violations-log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.violation-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background: #fff;
+  border-left: 3px solid #ff6666;
+  border-radius: 0;
+  font-size: 0.85rem;
+  border: 1px solid #ddd;
+}
+
+.time {
+  color: #666;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.violation-text {
+  color: #c00;
+  font-weight: normal;
+  margin-top: 0.15rem;
+}
+
+.calibration {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.85rem;
+}
+
+.calibration div {
+  margin: 0.25rem 0;
+}
+
+.session-summary {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  font-size: 0.85rem;
+}
+
+.session-summary strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.session-summary div {
+  margin: 0.25rem 0;
+}
+
+.session-summary pre {
+  background: #fff;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  font-size: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .violations-section {
+    grid-column: 1;
+    max-height: none;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+  }
+}
+
